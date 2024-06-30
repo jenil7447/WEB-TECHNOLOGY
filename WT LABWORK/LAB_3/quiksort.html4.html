@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab-3-4</title>
+</head>
+<body>
+    <script>
+        function quickSort(arr, n) {
+            if (n <= 1) {
+                return arr;
+            }
+
+            let pivot = arr[Math.floor(n / 2)];
+            let left = [];
+            let right = [];
+
+            for (let i = 0; i < n; i++) {
+                if (i === Math.floor(n / 2)) continue;
+                if (arr[i] < pivot) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+
+            return quickSort(left, left.length).concat(pivot, quickSort(right, right.length));
+        }
+
+        function sortArray() {
+            let input = prompt('Enter numbers separated by commas:');
+            if (input !== null) {
+                let inputArray = input.split(',');
+                let array = [];
+                for (let i = 0; i < inputArray.length; i++) {
+                    array.push(Number(inputArray[i]));
+                }
+                let n = array.length;
+                let sortedArray = quickSort(array, n);
+                console.log("Sorted Array: " + sortedArray.join(', '));
+            } else {
+                console.log("No input provided.");
+            }
+        }
+        sortArray();
+    </script>
+</body>
+</html>
