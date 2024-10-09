@@ -1,0 +1,20 @@
+.adduser{
+    background-color: aliceblue;
+    width: 25%;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(0,0,0);
+    
+}
+.adduser button{
+    margin-top: 25px;
+}
+.adduser h3{
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(13, 12, 12);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+
+}
